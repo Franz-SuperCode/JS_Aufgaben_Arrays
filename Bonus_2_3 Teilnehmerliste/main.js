@@ -1,17 +1,24 @@
 const liste = [];
+// Alle Elemente holen
 const hinzufuegen = document.querySelector("#hinzufuegen");
 const entfernen = document.querySelector("#entfernen");
-const theOl = document.querySelector("ol");
+const olElement = document.querySelector("ol");
 
 hinzufuegen.addEventListener("click", (event) => {
     event.preventDefault();
     const input = document.querySelector("#eingabe").value;
+    //Wenn Input leer ist, nichts machen
+    if (input === "") {
+        return
+    }
     //Input ins Array packen
     liste.push(input);
-    //Gelöst ohne Array zu benutzen
+    //Listenelement erstellen und einfügen
     const li = document.createElement("li");
-    theOl.appendChild(li);
+    olElement.appendChild(li);
     li.innerHTML = input;
+    //Input vom <form> resetten
+    document.querySelector("form").reset();
     console.log(liste);
 })
 
@@ -19,9 +26,7 @@ entfernen.addEventListener("click", (event) => {
     event.preventDefault();
     //Aus Array entfernen
     liste.pop();
-    //Gelöst ohne Array zu benutzen
-
     //Aus HTML entfernen
-    theOl.removeChild(theOl.lastChild);
+    olElement.removeChild(olElement.lastChild);
     console.log(liste);
 })
