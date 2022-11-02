@@ -6,23 +6,23 @@ const theUl = document.querySelector("ul");
 hinzufuegen.addEventListener("click", (event) => {
     event.preventDefault();
     const input = document.querySelector("#eingabe").value;
-    //======= Eingabe in Array speichern ========
     //Input ins Array packen
     liste.push(input);
-    //Array zu einem String
-    const arrayToString = liste.toString();
-    //String in HTML schreiben
-    theUl.innerHTML = arrayToString;
+    //Gelöst ohne Array zu benutzen
+    const li = document.createElement("li");
+    theUl.appendChild(li);
+    li.innerHTML = input;
+    ;
+
 })
 
 entfernen.addEventListener("click", (event) => {
     event.preventDefault();
     const input = document.querySelector("#eingabe").value;
-    //======= Eingabe in Array speichern ========
-    //Input ins Array packen
+    //Input aus Array packen
     liste.pop(input);
-    //Array zu einem String
-    const arrayToString = liste.toString();
-    //String in HTML schreiben
-    theUl.innerHTML = arrayToString;
+    //Gelöst ohne Array zu benutzen
+    const li = document.createElement("li");
+    theUl.removeChild(theUl.lastChild);
+    ;
 })
