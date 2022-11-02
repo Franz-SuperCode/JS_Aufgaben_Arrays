@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h1 {
+    padding: 1rem;
+}
+
+main h2 {
+    padding: 1rem;
+    text-decoration: underline;
+}
+
+ol {
+    background-color: lightgray;
+    list-style-position: inside;
+}
+
+input {
+    text-align: center;
+}
+
+article {
+    margin-top: 1rem;
+    text-align: center;
+    width: 40%;
+    height: 60vh;
+    background-color: lightgrey;
+    border-radius: 50px 50px 0 0;
+}

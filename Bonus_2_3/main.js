@@ -1,7 +1,7 @@
 const liste = [];
 const hinzufuegen = document.querySelector("#hinzufuegen");
 const entfernen = document.querySelector("#entfernen");
-const theUl = document.querySelector("ul");
+const theOl = document.querySelector("ol");
 
 hinzufuegen.addEventListener("click", (event) => {
     event.preventDefault();
@@ -10,19 +10,18 @@ hinzufuegen.addEventListener("click", (event) => {
     liste.push(input);
     //Gelöst ohne Array zu benutzen
     const li = document.createElement("li");
-    theUl.appendChild(li);
+    theOl.appendChild(li);
     li.innerHTML = input;
-    ;
-
+    console.log(liste);
 })
 
 entfernen.addEventListener("click", (event) => {
     event.preventDefault();
-    const input = document.querySelector("#eingabe").value;
-    //Input aus Array packen
-    liste.pop(input);
+    //Aus Array entfernen
+    liste.pop();
     //Gelöst ohne Array zu benutzen
-    const li = document.createElement("li");
-    theUl.removeChild(theUl.lastChild);
-    ;
+
+    //Aus HTML entfernen
+    theOl.removeChild(theOl.lastChild);
+    console.log(liste);
 })
